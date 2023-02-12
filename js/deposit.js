@@ -1,39 +1,30 @@
-/* Step 1: Add Event Listner to the deposit button */
+
 document
   .getElementById("deposit-button")
   .addEventListener("click", function () {
-    
-    // Step 2: Get the amount deposited:
-    const depositInput = document.getElementById("deposit-input");
-    const newDepositAmountText = depositInput.value;
-    const newDepositAmount = parseFloat(newDepositAmountText);
+    /* 
+  1.Get the element by id
+  2.Get the value of the element
+  3.Convert the value to a number
+  */
 
-    if (newDepositAmount > 0) {
+    // Get deposit input amount by id
+    const depositInput = getInputValueById("deposit-input");
+    // console.log(depositInput);
 
-      // Step: 3 Clear the deposit input field:
-      depositInput.value = "";
+    // Get previous deposit amount by id
+    const previousDeposiTotal = getElementValueById("deposit-total");
+    // console.log(previousDeposiTotal);
 
-      // Step 4: Get deposit total:
-      const depositTotal = document.getElementById("deposit-total");
-      const previousDepositText = depositTotal.innerText;
-      const previousDepositAmount = parseFloat(previousDepositText);
+    // Get new deposit total
+    const newDepositTotal = previousDeposiTotal + depositInput;
 
-      // Step 5: Update deposit total:
-      const newDepositTotal = previousDepositAmount + newDepositAmount;
-      depositTotal.innerText = newDepositTotal;
+    // Update deposit total
+    updateTotalField("deposit-total", newDepositTotal);
 
-    // Step 6: Update account balance:
-    const balanceTotal = document.getElementById("balance-total");
-    const balanceTotalText = balanceTotal.innerText;
-    const previousBalanceTotal = parseFloat(balanceTotalText);
-    const newBalanceTotal = previousBalanceTotal + newDepositAmount;
-    balanceTotal.innerText = newBalanceTotal;
+    // Update account balance
+    const previousBalance = getElementValueById("balance-total");
+    const newBalanceTotal = previousBalance + depositInput;
+    updateTotalField("balance-total", newBalanceTotal);
 
-    } else {
-
-      alert("Please enter a positive number");
-      // Clear the deposit input field
-      depositInput.value = "";
-      
-    }
   });
