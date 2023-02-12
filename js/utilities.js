@@ -1,3 +1,5 @@
+/*------- Working on Deposit System------------*/
+
 function getInputValueById(inputId) {
   // Get the element by id
   const inputField = document.getElementById(inputId);
@@ -23,3 +25,8 @@ function updateTotalField(elementId, newValue) {
   const textElement = document.getElementById(elementId);
   textElement.innerText = newValue;
 }
+
+/* ----------Working on Withdraw System------------ */
+
+
+
