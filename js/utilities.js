@@ -1,4 +1,3 @@
-/*------- Working on Deposit System------------*/
 
 function getInputValueById(inputId) {
   // Get the element by id
@@ -26,7 +25,30 @@ function updateTotalField(elementId, newValue) {
   textElement.innerText = newValue;
 }
 
-/* ----------Working on Withdraw System------------ */
+function validateDepositAmount(depositAmount) {
+  if (depositAmount <= 0 || isNaN(depositAmount)) {
+    alert("Invalid deposit amount. Please enter a valid amount.");
+    return false;
+  }
+  return true;
+}
+
+function validateWithdrawAmount(withdrawAmount, currentBalance) {
+  if (
+    withdrawAmount <= 0 ||
+    isNaN(withdrawAmount) ||
+    withdrawAmount > currentBalance
+  ) {
+    alert(
+      "Invalid withdraw amount. Please enter a valid amount and make sure you have sufficient balance which should be more than 1000."
+    );
+    return false;
+  }
+  return true;
+}
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-
+/*------- Working on Deposit System------------*/
 document
   .getElementById("deposit-button")
   .addEventListener("click", function () {
@@ -11,6 +11,11 @@ document
     // Get deposit input amount by id
     const depositInput = getInputValueById("deposit-input");
     // console.log(depositInput);
+
+    // Validate deposit amount
+    if (!validateDepositAmount(depositInput)) {
+      return;
+    }
 
     // Get previous deposit amount by id
     const previousDeposiTotal = getElementValueById("deposit-total");
@@ -26,5 +31,4 @@ document
     const previousBalance = getElementValueById("balance-total");
     const newBalanceTotal = previousBalance + depositInput;
     updateTotalField("balance-total", newBalanceTotal);
-
   });
