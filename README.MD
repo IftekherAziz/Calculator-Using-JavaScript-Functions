@@ -17,7 +17,7 @@
 - Return is optional. Based on the function you may or may not use the return 
 
 7. How will you hide extra text or content that goes outside of the area? (You can’t forget CSS.)
-- overflow:scroll
+- overflow:hidden
 
 8. What is true?
 - All the above
@@ -26,4 +26,4 @@
 - The element on which the event happened
 
 10. How will you get the $ symbol of the tag <h1 >$00</h1> (think about it)
-- By creating a span for 00
+- By adding a span for $ and setting an id
